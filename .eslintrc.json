@@ -5,7 +5,7 @@
   },
   "overrides": [
     {
-      "files": ["dist/*.js"]
+      "excludedFiles": ["dist/*.js"]
     }
   ]
 }
