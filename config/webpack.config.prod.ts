@@ -7,7 +7,7 @@ const config: webpack.Configuration = {
   entry: './src/index.ts',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: './',
   },
   mode: 'production',
@@ -16,13 +16,6 @@ const config: webpack.Configuration = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-
-        // use: [
-        //   {
-        //     loader: MiniCssExtractPlugin.loader,
-        //   },
-        //   'css-loader',
-        // ],
       },
     ],
   },

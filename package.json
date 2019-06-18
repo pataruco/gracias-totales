@@ -25,10 +25,12 @@
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.2",
     "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "webpack  --config ./config/webpack.config.prod.ts",
+    "dev": "webpack-dev-server --color --config ./config/webpack.config.dev.ts",
     "lint": "yarn tslint"
   },
   "husky": {
