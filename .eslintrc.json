@@ -1,0 +1,11 @@
+{
+  "extends": ["airbnb-base", "prettier", "plugin:prettier/recommended"],
+  "env": {
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["dist/*.js"]
+    }
+  ]
+}
