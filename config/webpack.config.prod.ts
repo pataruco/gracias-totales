@@ -8,15 +8,19 @@ const config: webpack.Configuration = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: './',
+    // publicPath: './',
   },
   mode: 'production',
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      { test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader' },
     ],
   },
   plugins: [

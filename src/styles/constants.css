@@ -1,0 +1,13 @@
+:root {
+  /* Fonts */
+  --sans-serif: Helvetica, Arial, sans-serif;
+  --base-space: 1.25em;
+
+  /* Colours */
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  --yellow: rgb(225, 240, 46);
+  --aquamarine: rgb(197, 246, 242);
+  --pink: rgb(238, 174, 212);
+  --greyBlue: rgb(91, 120, 123);
+}

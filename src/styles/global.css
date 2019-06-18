@@ -1,0 +1,32 @@
+:global * {
+  box-sizing: border-box;
+}
+
+:global html {
+  font-size: 14px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-image: linear-gradient(
+    16deg,
+    var(--yellow) 0%,
+    var(--aquamarine) 100%
+  );
+  font-family: var(--sans-serif);
+  padding: var(--base-space);
+  position: relative;
+}
+
+h1,
+h2 {
+  text-shadow: 2px 4px 0 var(--black), -1px -1px 0 var(--black),
+    1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+  color: var(--white);
+}
+
+section {
+  height: 100vh;
+}

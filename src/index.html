@@ -7,46 +7,60 @@
   <body>
     <header>
       <h1><%= htmlWebpackPlugin.options.title %></h1>
+      <a href="#" id="js-menu" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
     </header>
     <main>
-      <p>
-        The last 365 days have been full of challenges, obstacles, opportunities
-        and blessings for us, the Martín Blanco:
-      </p>
-      <ul>
-        <li>
-          We moved to another home
-        </li>
-        <li>
-          Miranda was born and left the hospital after 13 days.
-        </li>
-        <li>
-          Peter started a new nursery
-        </li>
-        <li>
-          Anita started and finished a new role.
-        </li>
-        <li>
-          Pedro was promoted to instructor in General Assembly
-        </li>
-      </ul>
-      <p>
-        The above would not have been possible without your help, love and
-        support. That's why we want to invite you to celebrate with us:
-      </p>
-      <ul>
-        <li>Our new home</li>
-        <li>Pedro's birthday</li>
-        <li>Miranda's birth</li>
-      </ul>
-
-      <p>
-        See you at The Avalon, 16 Balham Hill, Balham, London SW12 9EB, on
-        Saturday, July 20 starting at 2:00 PM. RSVP
-      </p>
+      <section id="intro">
+        <p>
+          The last 365 days have been full of challenges, obstacles,
+          opportunities and blessings for us, the Martín Blanco:
+        </p>
+        <ul>
+          <li>
+            We moved to another house
+          </li>
+          <li>
+            Miranda was born and left the hospital after 13 days.
+          </li>
+          <li>
+            Peter started a new nursery
+          </li>
+          <li>
+            Anita started and finished a new role.
+          </li>
+          <li>
+            Pedro was promoted to instructor in General Assembly
+          </li>
+        </ul>
+        <p>
+          The above would not have been possible without your help, love and
+          support. That's why we want to invite you to celebrate with us:
+        </p>
+      </section>
+      <section id="location">
+        <p>
+          See you at The Avalon, 16 Balham Hill, Balham, London SW12 9EB, on
+          Saturday, July 20 starting at 2:00 PM. RSVP
+        </p>
+      </section>
+      <section id="rsvp">
+        <button>RSVP</button>
+      </section>
+      <menu>
+        <ul>
+          <li>
+            <a class="js-nav-menu" data-section="intro" href="#">Intro</a>
+          </li>
+          <li>
+            <a class="js-nav-menu" data-section="location" href="#">Location</a>
+          </li>
+          <li><a class="js-nav-menu" data-section="rsvp" href="#">RSVP</a></li>
+        </ul>
+      </menu>
     </main>
-    <div>
-      pedro
-    </div>
   </body>
 </html>
