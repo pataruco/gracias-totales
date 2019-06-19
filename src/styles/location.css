@@ -1,0 +1,6 @@
+.map {
+  display: block;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0 var(--base-space);
+}

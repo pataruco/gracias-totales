@@ -13,15 +13,15 @@ body {
   font-family: var(--cursive);
   padding: var(--base-space);
   position: relative;
-  background-color: var(--white);
+  background-color: var(--notebook);
   background-image: linear-gradient(
       90deg,
       transparent var(--base-space),
-      var(--notebook) var(--base-space),
-      var(--notebook) calc(var(--base-space) + 2px),
+      var(--notebook-v-line) var(--base-space),
+      var(--notebook-v-line) calc(var(--base-space) + 2px),
       transparent calc(var(--base-space) + 2px)
     ),
-    linear-gradient(var(--cream) 0.1rem, transparent 0.1rem);
+    linear-gradient(var(--notebook-h-line) 0.1rem, transparent 0.1rem);
   background-size: 100% 1.15rem;
 }
 
@@ -42,4 +42,10 @@ section {
 
 ul {
   list-style-image: url('../assets/dot.svg');
+}
+
+img {
+  height: auto;
+  display: block;
+  width: 100%;
 }
