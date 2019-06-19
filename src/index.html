@@ -6,7 +6,6 @@
   </head>
   <body>
     <header>
-      <h1><%= htmlWebpackPlugin.options.title %></h1>
       <a href="#" id="js-menu" class="hamburger">
         <span></span>
         <span></span>
@@ -14,7 +13,8 @@
       </a>
     </header>
     <main>
-      <section id="intro">
+      <section id="gracias">
+        <h1><%= htmlWebpackPlugin.options.title %></h1>
         <p>
           The last 365 days have been full of challenges, obstacles,
           opportunities and blessings for us, the Martín Blanco:
@@ -42,18 +42,20 @@
         </p>
       </section>
       <section id="location">
+        <h2>Location</h2>
         <p>
           See you at The Avalon, 16 Balham Hill, Balham, London SW12 9EB, on
           Saturday, July 20 starting at 2:00 PM. RSVP
         </p>
       </section>
       <section id="rsvp">
+        <h2>RSVP</h2>
         <button>RSVP</button>
       </section>
       <menu>
         <ul>
           <li>
-            <a class="js-nav-menu" data-section="intro" href="#">Intro</a>
+            <a class="js-nav-menu" data-section="gracias" href="#">Gracias</a>
           </li>
           <li>
             <a class="js-nav-menu" data-section="location" href="#">Location</a>

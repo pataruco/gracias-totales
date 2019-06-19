@@ -1,13 +1,13 @@
 const hamburguerButton = document.getElementById('js-menu');
 const menuItems = document.querySelectorAll('.js-nav-menu');
 
-const toggleMenu = (): void => {
+const toggleMenu = (event: Event): void => {
+  event.preventDefault();
   document.body.classList.toggle('menu-open');
 };
 
-const navigateToSection = (event: Event) => {
-  event.preventDefault();
-  toggleMenu();
+const navigateToSection = (event: Event): void => {
+  toggleMenu(event);
   if (event && event.target) {
     const nameToGo = (event.target as HTMLAnchorElement).getAttribute(
       'data-section',
