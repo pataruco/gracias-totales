@@ -1,6 +1,7 @@
 .map {
   display: block;
-  width: 90vw;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 var(--base-space);
+  height: 60vh;
+  background-color: var(--notebook);
 }
