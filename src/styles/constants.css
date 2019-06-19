@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap');
 :root {
   /* Fonts */
   --sans-serif: Helvetica, Arial, sans-serif;
+  /* --cursive: 'Homemade Apple', cursive; */
+  --cursive: 'Permanent Marker', cursive;
+
+  /* Space */
   --base-space: 1.25em;
 
   /* Colours */
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
-  --yellow: rgb(225, 240, 46);
-  --aquamarine: rgb(197, 246, 242);
-  --pink: rgb(238, 174, 212);
-  --greyBlue: rgb(91, 120, 123);
+  --yellow: rgb(255, 255, 0);
+  --blue: rgb(0, 0, 255);
+  --red: rgb(255, 0, 0);
+  --green: rgb(0, 255, 0);
+  --cream: rgb(238, 238, 238);
+  --pen: rgb(0, 15, 85);
 }

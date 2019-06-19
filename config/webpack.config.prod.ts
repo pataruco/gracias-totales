@@ -21,6 +21,10 @@ const config: webpack.Configuration = {
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader' },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+      },
     ],
   },
   plugins: [
