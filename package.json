@@ -17,7 +17,9 @@
     "mini-css-extract-plugin": "^0.7.0",
     "prettier": "^1.18.2",
     "style-loader": "^0.23.1",
+    "svg-url-loader": "^2.3.3",
     "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.3",
     "ts-node": "^8.3.0",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
@@ -30,7 +32,7 @@
   },
   "scripts": {
     "build": "webpack  --config ./config/webpack.config.prod.ts",
-    "dev": "webpack-dev-server --color --config ./config/webpack.config.dev.ts",
+    "start:dev": "webpack-dev-server --color --config ./config/webpack.config.dev.ts",
     "lint": "yarn tslint"
   },
   "husky": {

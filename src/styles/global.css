@@ -1,0 +1,45 @@
+:global * {
+  box-sizing: border-box;
+}
+
+:global html {
+  font-size: 16px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--cursive);
+  padding: var(--base-space);
+  position: relative;
+  background-color: var(--white);
+  background-image: linear-gradient(
+      90deg,
+      transparent var(--base-space),
+      var(--notebook) var(--base-space),
+      var(--notebook) calc(var(--base-space) + 2px),
+      transparent calc(var(--base-space) + 2px)
+    ),
+    linear-gradient(var(--cream) 0.1rem, transparent 0.1rem);
+  background-size: 100% 1.15rem;
+}
+
+h1,
+h2 {
+  color: var(--white);
+  font-family: var(--sans-serif);
+  text-shadow: 2px 4px 0 var(--black), -1px -1px 0 var(--black),
+    1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+  transform: var(--base-rotation);
+  transform-origin: var(--base-transform-origin);
+}
+
+section {
+  height: 100vh;
+  padding: var(--base-space);
+}
+
+ul {
+  list-style-image: url('../assets/dot.svg');
+}

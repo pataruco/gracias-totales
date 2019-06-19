@@ -8,7 +8,10 @@ const config: webpack.Configuration = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: './',
+  },
+  devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
   mode: 'development',
   module: {
@@ -16,6 +19,11 @@ const config: webpack.Configuration = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      { test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader' },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
       },
     ],
   },
@@ -34,8 +42,11 @@ const config: webpack.Configuration = {
   // @ts-ignore
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 9000,
+    open: true,
+    port: 3000,
+    clientLogLevel: 'warning',
+    historyApiFallback: true,
+    stats: 'errors-only',
   },
 };
 

@@ -1,0 +1,38 @@
+menu {
+  background-color: var(--notebook);
+  background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(var(--cream) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cream) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  height: 100%;
+  left: 140%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  transition: all 400ms ease-in-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
+}
+
+body.menu-open menu {
+  left: 80%;
+  visibility: visible;
+}
+
+menu li {
+  margin-bottom: 1rem;
+}
+
+menu a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+menu a:hover,
+menu a:focus {
+  border-bottom: 0.2rem solid;
+}
