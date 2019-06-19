@@ -3,10 +3,14 @@
 }
 
 :global html {
-  font-size: 16px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   text-size-adjust: 100%;
+}
+
+html,
+body {
+  font-size: 19px;
 }
 
 body {
@@ -29,6 +33,7 @@ h1,
 h2 {
   color: var(--white);
   font-family: var(--sans-serif);
+  margin-top: 0;
   text-shadow: 2px 4px 0 var(--black), -1px -1px 0 var(--black),
     1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
   transform: var(--base-rotation);
@@ -48,4 +53,8 @@ img {
   height: auto;
   display: block;
   width: 100%;
+}
+
+section > div {
+  max-width: 40rem;
 }

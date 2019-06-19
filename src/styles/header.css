@@ -21,7 +21,8 @@
 }
 
 body.menu-open .hamburger span {
-  box-shadow: 0px 1px 0 var(--black);
+  box-shadow: none;
+  background-color: var(--black);
 }
 
 body.menu-open .hamburger span:first-child {
