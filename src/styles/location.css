@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   margin: 0 auto;
-  height: 60vh;
+  height: calc(((100vw / 2.5) - (2 * var(--base-space))));
   background-color: var(--notebook);
 }
 

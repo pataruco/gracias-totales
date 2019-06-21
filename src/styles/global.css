@@ -44,6 +44,8 @@ section {
   height: 100vh;
   padding: var(--base-space);
   border-bottom: 4px dashed;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -54,11 +56,6 @@ img {
   height: auto;
   display: block;
   width: 100%;
-}
-
-section > div {
-  max-width: 40em;
-  padding: var(--base-space);
 }
 
 .highlight-blue {
@@ -76,4 +73,22 @@ section > div {
 }
 .highlight-yellow {
   background-color: var(--hightlight-yellow);
+}
+
+.down-button {
+  text-align: center;
+}
+
+.down-button a {
+  text-decoration: none;
+  font-size: 3em;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.column {
+  flex-basis: 100%;
 }
