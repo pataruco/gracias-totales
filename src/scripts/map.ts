@@ -59,7 +59,13 @@ const renderDirections = (
   map: google.maps.Map,
 ): void => {
   const directionsService = new google.maps.DirectionsService();
-  const directionsDisplay = new google.maps.DirectionsRenderer();
+  const directionsDisplay = new google.maps.DirectionsRenderer({
+    suppressMarkers: true,
+    polylineOptions: {
+      strokeColor: '#000',
+      strokeWeight: 15,
+    },
+  });
   directionsDisplay.setMap(map);
 
   directionsService.route(
@@ -69,8 +75,7 @@ const renderDirections = (
       // @ts-ignore
       travelMode: 'DRIVING',
     },
-    // @ts-ignore
-    (result, status) => {
+    (result: google.maps.DirectionsResult, status: string) => {
       if (status === 'OK') {
         directionsDisplay.setDirections(result);
         const [leg] = result.routes[0].legs;
