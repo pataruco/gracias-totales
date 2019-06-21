@@ -53,6 +53,7 @@
     }
   },
   "dependencies": {
+    "googleapis": "^40.0.0",
     "normalize.css": "^8.0.1"
   }
 }
