@@ -60,3 +60,20 @@ section > div {
   max-width: 40em;
   padding: var(--base-space);
 }
+
+.highlight-blue {
+  background-color: var(--hightlight-blue);
+}
+
+.highlight-red {
+  background-color: var(--hightlight-red);
+}
+.highlight-purple {
+  background-color: var(--hightlight-purple);
+}
+.highlight-green {
+  background-color: var(--hightlight-green);
+}
+.highlight-yellow {
+  background-color: var(--hightlight-yellow);
+}

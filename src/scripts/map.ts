@@ -62,7 +62,7 @@ const renderDirections = (
   const directionsDisplay = new google.maps.DirectionsRenderer({
     suppressMarkers: true,
     polylineOptions: {
-      strokeColor: '#000',
+      strokeColor: '#ff00bc',
       strokeWeight: 15,
     },
   });

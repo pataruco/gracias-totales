@@ -6,7 +6,7 @@ const toggleMenu = (event: Event): void => {
   document.body.classList.toggle('menu-open');
 };
 
-const navigateToSection = (event: Event): void => {
+export const navigateToSection = (event: Event): void => {
   toggleMenu(event);
   if (event && event.target) {
     const nameToGo = (event.target as HTMLAnchorElement).getAttribute(

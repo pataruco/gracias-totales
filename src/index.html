@@ -13,7 +13,7 @@
       </a>
     </header>
     <main>
-      <section id="gracias">
+      <section id="gracias" class="gracias">
         <div>
           <h1><%= htmlWebpackPlugin.options.title %></h1>
           <p>
@@ -22,33 +22,55 @@
           </p>
           <ul>
             <li>
-              We moved to another house
+              <mark class="highlight-blue">We moved to another house 🚌🏡</mark>
             </li>
             <li>
-              Miranda was born and left the hospital after 13 days.
+                <mark class="highlight-red">Miranda was born and left the hospital after 13 days. 😢👶🏼🏨🙏🏻</mark>
             </li>
             <li>
-              Peter started a new nursery
+                <mark class="highlight-purple">Peter started a new nursery 💪🏻</mark>
             </li>
             <li>
-              Anita started and finished a new role.
+                <mark class="highlight-green">Anita started and finished a new role. 🙌🏻</mark>
             </li>
             <li>
-              Pedro was promoted to instructor in General Assembly
+                <mark>Pedro was promoted to instructor in General Assembly 🤟🏻</mark>
             </li>
           </ul>
           <p>
             The above would not have been possible without your help, love and
-            support. That's why we want to invite you to celebrate with us:
+            support. That's why we want to invite you to <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
+          </p>
+          <p>
+            <a href="#" class="js-down-button" data-section="location">⏬</a>
           </p>
         </div>
       </section>
       <section id="location">
         <div>
           <h2>Location</h2>
+          <p>See you at 
+            <mark class="highlight-red">
+              <a href="https://www.theavalonlondon.com/" target="_blank">
+                The Avalon
+              </a>
+            </mark>
+          </p>
           <p>
-            See you at The Avalon, 16 Balham Hill, Balham, London SW12 9EB, on
-            Saturday, July 20 starting at 2:00 PM. RSVP
+            <address>
+              <mark class="highlight-green">
+                <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
+                  Balham Hill, Balham, London SW12 9EB,
+                </a>
+              </mark>
+              </address>
+              <time class="highlight-blue" datetime="2019-07-20 14:00:">
+                on Saturday, July 20
+                starting at 2:00 PM. 
+            </time>
+          </p>
+          <p>          
+            Please RSVP
           </p>
           <div id="js-map" class="map"></div>
         </div>
