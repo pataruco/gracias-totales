@@ -13,39 +13,83 @@
       </a>
     </header>
     <main>
-      <section id="gracias">
-        <h1><%= htmlWebpackPlugin.options.title %></h1>
-        <p>
-          The last 365 days have been full of challenges, obstacles,
-          opportunities and blessings for us, the Martín Blanco:
-        </p>
-        <ul>
-          <li>
-            We moved to another house
-          </li>
-          <li>
-            Miranda was born and left the hospital after 13 days.
-          </li>
-          <li>
-            Peter started a new nursery
-          </li>
-          <li>
-            Anita started and finished a new role.
-          </li>
-          <li>
-            Pedro was promoted to instructor in General Assembly
-          </li>
-        </ul>
-        <p>
-          The above would not have been possible without your help, love and
-          support. That's why we want to invite you to celebrate with us:
+      <section id="gracias" class="gracias">
+        <div>
+          <h1><%= htmlWebpackPlugin.options.title %></h1>
+          <p>
+            The last 365 days have been full of challenges, obstacles,
+            opportunities and blessings for us, the Martín Blanco:
+          </p>
+          <ul>
+            <li>
+              <mark class="highlight-blue">We moved to another house 🚌🏡</mark>
+            </li>
+            <li>
+              <mark class="highlight-red"
+                >Miranda was born and left the hospital after 13 days.
+                😢👶🏼🏨🙏🏻</mark
+              >
+            </li>
+            <li>
+              <mark class="highlight-purple"
+                >Peter started a new nursery 💪🏻</mark
+              >
+            </li>
+            <li>
+              <mark class="highlight-green"
+                >Anita started and finished a new role. 🙌🏻</mark
+              >
+            </li>
+            <li>
+              <mark
+                >Pedro was promoted to instructor in General Assembly 🤟🏻</mark
+              >
+            </li>
+          </ul>
+          <p>
+            The above would not have been possible without your help, love and
+            support. That's why we want to invite you to
+            <mark class="highlight-blue">celebrate</mark> with us: 🎉🎊
+          </p>
+        </div>
+        <p class="down-button animated infinite slideInDown">
+          <a href="#" class="js-down-button " data-section="location">⏬</a>
         </p>
       </section>
       <section id="location">
-        <h2>Location</h2>
-        <p>
-          See you at The Avalon, 16 Balham Hill, Balham, London SW12 9EB, on
-          Saturday, July 20 starting at 2:00 PM. RSVP
+        <div class="row">
+          <div class="column">
+            <h2>Location</h2>
+            <p>
+              See you at
+              <mark class="highlight-red">
+                <a href="https://www.theavalonlondon.com/" target="_blank">
+                  The Avalon
+                </a>
+              </mark>
+            </p>
+            <address>
+              <p>
+                <mark class="highlight-green">
+                  <a href="https://goo.gl/maps/hKvx812z2yWaGgXw7">
+                    Balham Hill, Balham, London SW12 9EB,
+                  </a>
+                </mark>
+              </p>
+            </address>
+            <time class="highlight-blue" datetime="2019-07-20 14:00:">
+              on Saturday, July 20 starting at 2:00 PM.
+            </time>
+            <p>
+              Please RSVP 🙏🏻
+            </p>
+          </div>
+          <div class="column">
+            <div id="js-map" class="map"></div>
+          </div>
+        </div>
+        <p class="down-button animated infinite slideInDown">
+          <a href="#" class="js-down-button" data-section="location">⏬</a>
         </p>
       </section>
       <section id="rsvp">
@@ -64,5 +108,6 @@
         </ul>
       </menu>
     </main>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBum8HUlhV6EPKJQVzxLeWkNfpHNivlYjc"></script>
   </body>
 </html>

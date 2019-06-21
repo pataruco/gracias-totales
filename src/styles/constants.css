@@ -17,5 +17,13 @@
   --red: rgb(255, 0, 0);
   --green: rgb(0, 255, 0);
   --cream: rgb(238, 238, 238);
-  --notebook: rgb(171, 206, 212);
+  --notebook: rgb(246, 236, 163);
+  --notebook-v-line: rgb(203, 170, 169);
+  --notebook-h-line: rgb(205, 200, 195);
+  --square-notebook: rgb(165, 205, 223);
+  --hightlight-blue: rgb(21, 244, 238);
+  --hightlight-red: rgb(255, 0, 188);
+  --hightlight-purple: rgb(133, 0, 255);
+  --hightlight-green: rgb(3, 255, 0);
+  --hightlight-yellow: rgb(222, 255, 0);
 }

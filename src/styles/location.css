@@ -1,0 +1,31 @@
+.map {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: calc(((100vw / 2.5) - (2 * var(--base-space))));
+  background-color: var(--notebook);
+}
+
+.highlight-red a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.highlight-red a:hover,
+.highlight-red a:focus {
+  color: var(--black);
+  background-color: var(--hightlight-green);
+  border-bottom: 2px solid currentColor;
+}
+
+.highlight-green a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.highlight-green a:hover,
+.highlight-green a:focus {
+  color: var(--white);
+  background-color: var(--black);
+  border-bottom: 2px solid currentColor;
+}

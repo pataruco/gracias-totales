@@ -1,0 +1,23 @@
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -25%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated.slideInDown {
+  animation-name: slideInDown;
+}
+
+.animated {
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}

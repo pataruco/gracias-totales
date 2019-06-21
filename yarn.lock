@@ -358,6 +358,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/googlemaps@^3.36.5":
+  version "3.36.5"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.36.5.tgz#9fa57d430e4982ce9f2352e1a48dfe5c294fe868"
+  integrity sha512-ft36SAiK2eJIC+dovC8iJNbfREYAq7toDizRttCLV7tX427s72LXwSW9aWjbS+pLRbMhjV29WBR8iGvtytRuNg==
+
 "@types/html-minifier@*":
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/@types/html-minifier/-/html-minifier-3.5.3.tgz#5276845138db2cebc54c789e0aaf87621a21e84f"

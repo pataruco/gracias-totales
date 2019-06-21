@@ -3,32 +3,37 @@
 }
 
 :global html {
-  font-size: 16px;
   overflow-y: scroll;
   scroll-behavior: smooth;
   text-size-adjust: 100%;
 }
 
+html,
+body {
+  font-size: 19px;
+  line-height: 1.32;
+}
+
 body {
   font-family: var(--cursive);
-  padding: var(--base-space);
   position: relative;
-  background-color: var(--white);
+  background-color: var(--notebook);
   background-image: linear-gradient(
       90deg,
       transparent var(--base-space),
-      var(--notebook) var(--base-space),
-      var(--notebook) calc(var(--base-space) + 2px),
+      var(--notebook-v-line) var(--base-space),
+      var(--notebook-v-line) calc(var(--base-space) + 2px),
       transparent calc(var(--base-space) + 2px)
     ),
-    linear-gradient(var(--cream) 0.1rem, transparent 0.1rem);
-  background-size: 100% 1.15rem;
+    linear-gradient(var(--notebook-h-line) 0.1rem, transparent 0.1rem);
+  background-size: 100% 1.32rem;
 }
 
 h1,
 h2 {
   color: var(--white);
   font-family: var(--sans-serif);
+  margin-top: 0;
   text-shadow: 2px 4px 0 var(--black), -1px -1px 0 var(--black),
     1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
   transform: var(--base-rotation);
@@ -38,8 +43,52 @@ h2 {
 section {
   height: 100vh;
   padding: var(--base-space);
+  border-bottom: 4px dashed;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
   list-style-image: url('../assets/dot.svg');
+}
+
+img {
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+.highlight-blue {
+  background-color: var(--hightlight-blue);
+}
+
+.highlight-red {
+  background-color: var(--hightlight-red);
+}
+.highlight-purple {
+  background-color: var(--hightlight-purple);
+}
+.highlight-green {
+  background-color: var(--hightlight-green);
+}
+.highlight-yellow {
+  background-color: var(--hightlight-yellow);
+}
+
+.down-button {
+  text-align: center;
+}
+
+.down-button a {
+  text-decoration: none;
+  font-size: 3em;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.column {
+  flex-basis: 100%;
 }
