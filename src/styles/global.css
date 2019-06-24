@@ -47,6 +47,9 @@ section {
   display: flex;
   flex-direction: column;
 }
+section:last-of-type {
+  border-bottom: none;
+}
 
 ul {
   list-style-image: url('../assets/dot.svg');

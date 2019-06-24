@@ -46,7 +46,10 @@ const blurState = (event: Event) => {
     'event-validation-error',
   ];
   classesNames.forEach(name => document.body.classList.remove(name));
-  form.classList.remove('focus');
+
+  if (emailInput.value.length === 0) {
+    form.classList.remove('focus');
+  }
 };
 
 form.addEventListener('submit', addAttendee);
