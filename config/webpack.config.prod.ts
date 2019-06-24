@@ -1,14 +1,15 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import path from 'path';
+import TerserJSPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 
 const config: webpack.Configuration = {
   entry: './src/index.ts',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, '../dist'),
-    // publicPath: './',
+    path: path.resolve(__dirname, '../docs'),
   },
   mode: 'production',
   resolve: {
@@ -40,6 +41,12 @@ const config: webpack.Configuration = {
   ],
   node: {
     net: 'empty',
+  },
+  optimization: {
+    minimizer: [
+      new TerserJSPlugin({ extractComments: true }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
 };
 
