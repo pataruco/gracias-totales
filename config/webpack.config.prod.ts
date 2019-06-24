@@ -1,9 +1,12 @@
+// @ts-ignore
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import path from 'path';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
+import { favicon } from './webpack.config.dev';
 
 const config: webpack.Configuration = {
   entry: './src/index.ts',
@@ -38,6 +41,7 @@ const config: webpack.Configuration = {
       filename: '[name].css',
       chunkFilename: './[name].css',
     }),
+    new FaviconsWebpackPlugin(favicon),
   ],
   node: {
     net: 'empty',

@@ -1,7 +1,13 @@
+// @ts-ignore
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
+export const favicon = path.resolve(
+  __dirname,
+  '../src/assets/party-popper.png',
+);
 
 const config: webpack.Configuration = {
   entry: './src/index.ts',
@@ -38,6 +44,7 @@ const config: webpack.Configuration = {
       chunkFilename: '[name].css',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new FaviconsWebpackPlugin(favicon),
   ],
   // @ts-ignore
   devServer: {
