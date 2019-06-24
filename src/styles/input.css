@@ -1,114 +1,16 @@
-.input {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin: 1em 0;
-  max-width: 350px;
-  width: calc(100% - 2em);
-  vertical-align: top;
-  overflow: hidden;
-}
-
-.input__field {
-  position: relative;
-  display: block;
-  float: right;
-  padding: 0.8em;
-  width: 60%;
-  border: none;
-  border-radius: 0;
-  font-weight: bold;
-  -webkit-appearance: none; /* for box shadows to show on iOS */
-  margin-top: 1em;
-  padding: 0.85em 0;
-  width: 100%;
-  background: transparent;
-}
-
-.input__field:focus {
-  outline: none;
-}
-
-.input__label {
-  display: inline-block;
-  float: right;
-  padding: 0 1em;
-  width: 40%;
-  font-weight: bold;
-  font-size: 70.25%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0 0.25em;
-  width: 100%;
-  height: calc(100% - 1em);
-  text-align: left;
-  pointer-events: none;
-}
-
-.input__label-content {
-  position: relative;
-  display: block;
-  padding: 1.6em 0;
-  width: 100%;
-  position: absolute;
-}
-
-.input__label::before,
-.input__label::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 10px);
-  border-bottom: 2px dotted;
-}
-
-.input__label::after {
-  border-bottom: 8px solid var(--hightlight-green);
-  transform: translate3d(-100%, 0, 0);
-  transition: transform 0.3s;
-}
-
-.input__field:focus + .input__label::after,
-.input--filled .input__label::after {
-  transform: translate3d(0, 0, 0);
-}
-
-.input__field:focus + .input__label .input__label-content,
-.input--filled .input__label-content {
-  animation: slide 0.3s forwards;
-}
-
-@keyframes slide {
-  50% {
-    opacity: 0;
-    -webkit-transform: translate3d(1em, 0, 0);
-    transform: translate3d(1em, 0, 0);
-  }
-  51% {
-    opacity: 0;
-    -webkit-transform: translate3d(-1em, -40%, 0);
-    transform: translate3d(-1em, -40%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, -40%, 0);
-    transform: translate3d(0, -40%, 0);
-  }
-}
-
-.form__button {
-  display: block;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: var(--black);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .form label,
@@ -118,8 +20,6 @@
 }
 
 .form > span {
-  /* background-color: blue; */
-  /* background-color: rgba(127, 127, 255, 0.6); */
   display: block;
   max-width: 20rem;
   position: relative;
@@ -133,6 +33,7 @@
   border-bottom: 4px dotted;
   outline: none;
   width: 100%;
+  padding-bottom: 0.25rem;
 }
 
 .form > span > span {
@@ -140,33 +41,29 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: rgba(127, 127, 255, 0.6);
   transform: translate3d(-100%, 0, 0);
-  border-bottom: 8px solid black;
-  display: inline-block;
-  animation: slideLeft 0.35s linear forwards;
+  border-bottom: 8px solid var(--hightlight-blue);
+  transition: 0.35s linear all;
 }
 
 .form.focus > span > span {
-  animation: slideRight 0.35s linear forwards;
+  transform: translate3d(0, 0, 0);
 }
 
-@keyframes slideRight {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+.form input[type='submit'] {
+  -webkit-appearance: none;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border: 2px solid var(--black);
+  box-shadow: 2px 2px 0 var(--black);
+  box-shadow: 3px 3px 0 var(--black);
+  display: block;
+  outline: none;
 }
 
-@keyframes slideLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
+.form input[type='submit']:hover,
+.form input[type='submit']:focus,
+.form input[type='submit']:active {
+  border: 1px solid var(--black);
+  box-shadow: 2px 2px 0 var(--black);
 }
