@@ -47,8 +47,15 @@ section {
   display: flex;
   flex-direction: column;
 }
+
 section:last-of-type {
   border-bottom: none;
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    height: initial;
+  }
 }
 
 ul {
@@ -90,6 +97,12 @@ img {
 .row {
   display: flex;
   flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
 }
 
 .column {
