@@ -42,7 +42,7 @@ export const updateEvent = async (email: string): Promise<boolean> => {
 
   attendees.push(attendee);
   const response = await fetch(
-    `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/${EVENT_ID}`,
+    `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/${EVENT_ID}?sendUpdates=all`,
     {
       method: 'PATCH',
       headers: {

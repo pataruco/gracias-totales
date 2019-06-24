@@ -46,6 +46,14 @@ select:-webkit-autofill:focus {
   transition: 0.35s linear all;
 }
 
+.event-validation-error .form > span > span {
+  border-bottom-color: var(--hightlight-red);
+}
+
+.event-update-failure .form > span > span {
+  border-bottom-color: var(--hightlight-yellow);
+}
+
 .form.focus > span > span {
   transform: translate3d(0, 0, 0);
 }

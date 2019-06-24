@@ -3,28 +3,43 @@ import { updateEvent } from './update-event';
 
 const form = document.getElementById('js-form') as HTMLFormElement;
 const emailInput = document.getElementById('email') as HTMLInputElement;
+const messageElement = document.getElementById(
+  'js-rsvp-message',
+) as HTMLParagraphElement;
 
 const schema = Joi.string()
   .email()
   .required();
 
+const messages = {
+  request: `Updating guess list 📡...`,
+  success: `Great see you then 🎊🎉`,
+  failure: `Something went wrong, please try again 😱`,
+  validation: `Please enter a valid email 📩`,
+};
+
 const addAttendee = async (event: Event) => {
+  renderMessage(messages.request);
   event.preventDefault();
   if (emailInput.checkValidity()) {
     const { value } = emailInput;
     const { error } = Joi.validate(value, schema);
     if (error) {
-      // tslint:disable-next-line:no-console
-      console.error(error);
+      renderMessage(messages.validation);
       document.body.classList.toggle('event-validation-error');
       emailInput.value = '';
       return;
     }
     const isEventUpdated = await updateEvent(value);
 
-    isEventUpdated
-      ? document.body.classList.toggle('event-update-success')
-      : document.body.classList.toggle('event-update-failure');
+    if (isEventUpdated) {
+      form.remove();
+      document.body.classList.toggle('event-update-success');
+      renderMessage(messages.success);
+    } else {
+      document.body.classList.toggle('event-update-failure');
+      renderMessage(messages.failure);
+    }
   }
 };
 
@@ -50,6 +65,11 @@ const blurState = (event: Event) => {
   if (emailInput.value.length === 0) {
     form.classList.remove('focus');
   }
+};
+
+const renderMessage = (message: string) => {
+  messageElement.innerText = '';
+  messageElement.innerText = message;
 };
 
 form.addEventListener('submit', addAttendee);
