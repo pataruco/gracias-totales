@@ -28,7 +28,7 @@ const addAttendee = async (event: Event) => {
   }
 };
 
-const removeState = (event: Event) => {
+const focusState = (event: Event) => {
   emailInput.value = '';
   const classesNames = [
     'event-update-success',
@@ -36,7 +36,19 @@ const removeState = (event: Event) => {
     'event-validation-error',
   ];
   classesNames.forEach(name => document.body.classList.remove(name));
+  form.classList.add('focus');
+};
+
+const blurState = (event: Event) => {
+  const classesNames = [
+    'event-update-success',
+    'event-update-failure',
+    'event-validation-error',
+  ];
+  classesNames.forEach(name => document.body.classList.remove(name));
+  form.classList.remove('focus');
 };
 
 form.addEventListener('submit', addAttendee);
-emailInput.addEventListener('focus', removeState);
+emailInput.addEventListener('focus', focusState);
+emailInput.addEventListener('blur', blurState);

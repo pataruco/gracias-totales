@@ -6,6 +6,7 @@
   max-width: 350px;
   width: calc(100% - 2em);
   vertical-align: top;
+  overflow: hidden;
 }
 
 .input__field {
@@ -18,6 +19,10 @@
   border-radius: 0;
   font-weight: bold;
   -webkit-appearance: none; /* for box shadows to show on iOS */
+  margin-top: 1em;
+  padding: 0.85em 0;
+  width: 100%;
+  background: transparent;
 }
 
 .input__field:focus {
@@ -39,27 +44,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.input__label-content {
-  position: relative;
-  display: block;
-  padding: 1.6em 0;
-  width: 100%;
-}
-/* Hoshi */
-.input--hoshi {
-  overflow: hidden;
-}
-
-.input__field--hoshi {
-  margin-top: 1em;
-  padding: 0.85em 0;
-  width: 100%;
-  background: transparent;
-}
-
-.input__label--hoshi {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -70,12 +54,16 @@
   pointer-events: none;
 }
 
-.input__label-content--hoshi {
+.input__label-content {
+  position: relative;
+  display: block;
+  padding: 1.6em 0;
+  width: 100%;
   position: absolute;
 }
 
-.input__label--hoshi::before,
-.input__label--hoshi::after {
+.input__label::before,
+.input__label::after {
   content: '';
   position: absolute;
   top: 0;
@@ -85,27 +73,23 @@
   border-bottom: 2px dotted;
 }
 
-.input__label--hoshi::after {
+.input__label::after {
   border-bottom: 8px solid var(--hightlight-green);
-
   transform: translate3d(-100%, 0, 0);
   transition: transform 0.3s;
 }
 
-.input__label--hoshi-color-1::after {
-}
-
-.input__field--hoshi:focus + .input__label--hoshi::after,
-.input--filled .input__label--hoshi::after {
+.input__field:focus + .input__label::after,
+.input--filled .input__label::after {
   transform: translate3d(0, 0, 0);
 }
 
-.input__field--hoshi:focus + .input__label--hoshi .input__label-content--hoshi,
-.input--filled .input__label-content--hoshi {
-  animation: anim-1 0.3s forwards;
+.input__field:focus + .input__label .input__label-content,
+.input--filled .input__label-content {
+  animation: slide 0.3s forwards;
 }
 
-@keyframes anim-1 {
+@keyframes slide {
   50% {
     opacity: 0;
     -webkit-transform: translate3d(1em, 0, 0);
@@ -123,6 +107,39 @@
   }
 }
 
-.form__button {
+/* .form__button {
   display: block;
 }
+
+.form label,
+.form input {
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+.form input[type='email'] {
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 4px dotted;
+  width: 100%;
+  max-width: 20rem;
+  outline: none;
+  position: relative;
+}
+
+.form input[type='email']:before {
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 0, 55, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+} */
+/* 
+.form .focus {
+  transform: translate3d(0, 0, 0);
+  animation: slide 0.3s forwards;
+} */
