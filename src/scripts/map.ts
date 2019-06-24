@@ -21,12 +21,19 @@ const renderMarker = (
   position: google.maps.LatLng | google.maps.ReadonlyLatLngLiteral,
   icon: google.maps.Symbol,
   map: google.maps.Map,
+  label: string,
 ): google.maps.Marker =>
   new google.maps.Marker({
     position,
     map,
     icon,
     zIndex: 1000,
+    label: {
+      color: '#000',
+      fontSize: '24px',
+      text: label,
+      fontFamily: 'Permanent Marker',
+    },
   });
 
 const getUserCoordinates = async (): Promise<google.maps.LatLng> => {
@@ -50,8 +57,8 @@ const renderRoute = (
 ): void => {
   const startLocation = getPositionFromLeg(leg.start_location);
   const endLocation = getPositionFromLeg(leg.end_location);
-  renderMarker(startLocation, startIcon, map);
-  renderMarker(endLocation, endIcon, map);
+  renderMarker(startLocation, startIcon, map, 'You');
+  renderMarker(endLocation, endIcon, map, 'Party 🎉');
 };
 
 const renderDirections = (
