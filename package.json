@@ -55,7 +55,10 @@
       "*.{ts,ts}": [
         "yarn lint"
       ]
-    }
+    },
+    "ignore": [
+      "./docs/*.*"
+    ]
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
