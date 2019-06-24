@@ -97,11 +97,19 @@
       <section id="rsvp">
         <h2>RSVP</h2>
         <form id="js-form">
-          <label for="email">
-            Email
-          </label>
-          <input type="email" name="email" id="email" required />
-          <input type="submit" value="RSVP" />
+          <span class="input input--hoshi">
+            <input
+              class="input__field input__field--hoshi"
+              type="email"
+              id="email"
+            />
+            <label class="input__label input__label--hoshi" for="email">
+              <span class="input__label-content input__label-content--hoshi"
+                >Email</span
+              >
+            </label>
+          </span>
+          <input type="submit" value="RSVP" class="form__button" />
         </form>
       </section>
       <menu>
