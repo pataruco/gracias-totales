@@ -34,7 +34,7 @@ const getEvent = async () => {
   return response.json();
 };
 
-export const updateEvent = async (email: string) => {
+export const updateEvent = async (email: string): Promise<boolean> => {
   const accessToken = await getToken();
   const event = await getEvent();
   const { attendees } = event;
@@ -55,5 +55,5 @@ export const updateEvent = async (email: string) => {
       }),
     },
   );
-  return response.json();
+  return response.ok;
 };
