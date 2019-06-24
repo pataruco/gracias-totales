@@ -6,6 +6,12 @@
   background-color: var(--notebook);
 }
 
+@media screen and (max-width: 600px) {
+  .map {
+    height: calc(100vw / 2.5);
+  }
+}
+
 .highlight-red a {
   color: var(--white);
   text-decoration: none;
