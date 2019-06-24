@@ -42,11 +42,13 @@ const config: webpack.Configuration = {
   // @ts-ignore
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    open: true,
     port: 3000,
     clientLogLevel: 'warning',
     historyApiFallback: true,
     stats: 'errors-only',
+  },
+  node: {
+    net: 'empty',
   },
 };
 

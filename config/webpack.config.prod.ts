@@ -38,6 +38,9 @@ const config: webpack.Configuration = {
       chunkFilename: '[name].css',
     }),
   ],
+  node: {
+    net: 'empty',
+  },
 };
 
 export default config;
