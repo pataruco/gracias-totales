@@ -107,39 +107,66 @@
   }
 }
 
-/* .form__button {
+.form__button {
   display: block;
 }
 
 .form label,
-.form input {
+.form > span {
   display: block;
   margin-bottom: 0.8em;
 }
 
-.form input[type='email'] {
-  -webkit-appearance: none;
-  border: none;
-  background-color: transparent;
-  border-bottom: 4px dotted;
-  width: 100%;
+.form > span {
+  /* background-color: blue; */
+  /* background-color: rgba(127, 127, 255, 0.6); */
+  display: block;
   max-width: 20rem;
-  outline: none;
   position: relative;
+  overflow: hidden;
 }
 
-.form input[type='email']:before {
-  content: '';
+.form input[type='email'] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px dotted;
+  outline: none;
+  width: 100%;
+}
+
+.form > span > span {
+  width: 101%;
   position: absolute;
-  background-color: rgba(255, 0, 55, 0.8);
-  top: 0;
-  right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
-} */
-/* 
-.form .focus {
-  transform: translate3d(0, 0, 0);
-  animation: slide 0.3s forwards;
-} */
+  background-color: rgba(127, 127, 255, 0.6);
+  transform: translate3d(-100%, 0, 0);
+  border-bottom: 8px solid black;
+  display: inline-block;
+  animation: slideLeft 0.35s linear forwards;
+}
+
+.form.focus > span > span {
+  animation: slideRight 0.35s linear forwards;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
