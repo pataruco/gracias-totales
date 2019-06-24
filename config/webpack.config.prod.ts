@@ -36,7 +36,7 @@ const config: webpack.Configuration = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[name].css',
+      chunkFilename: './[name].css',
     }),
   ],
   node: {
@@ -45,7 +45,7 @@ const config: webpack.Configuration = {
   optimization: {
     minimizer: [
       new TerserJSPlugin({ extractComments: true }),
-      // new OptimizeCSSAssetsPlugin({}),
+      new OptimizeCSSAssetsPlugin({}),
     ],
   },
 };
