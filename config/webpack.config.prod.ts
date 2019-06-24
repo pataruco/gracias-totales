@@ -45,7 +45,7 @@ const config: webpack.Configuration = {
   optimization: {
     minimizer: [
       new TerserJSPlugin({ extractComments: true }),
-      new OptimizeCSSAssetsPlugin({}),
+      // new OptimizeCSSAssetsPlugin({}),
     ],
   },
 };
