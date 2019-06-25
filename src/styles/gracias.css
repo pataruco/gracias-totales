@@ -5,5 +5,5 @@
   flex-direction: column;
   height: 90%;
   max-width: 40em;
-  padding: var(--base-space);
+  padding: var(--base-space) 0;
 }

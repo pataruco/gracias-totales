@@ -38,3 +38,14 @@ body.menu-open .hamburger span:last-child {
   margin-top: -24px;
   transform: rotate(-45deg);
 }
+
+@media screen and (max-width: 600px) {
+  .hamburger span {
+    height: 6px;
+    width: 40px;
+  }
+
+  body.menu-open .hamburger span:last-child {
+    margin-top: -21px;
+  }
+}

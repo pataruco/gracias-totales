@@ -36,3 +36,9 @@ menu a:hover,
 menu a:focus {
   border-bottom: 0.2rem solid;
 }
+
+@media screen and (max-width: 600px) {
+  body.menu-open menu {
+    left: 50%;
+  }
+}
