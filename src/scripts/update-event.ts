@@ -1,6 +1,6 @@
 // I couldn't resolve .env using dotenv webpack
-// Is a know problem when webpack is written on TS
-// I used Mozilla convict to introduce evn vats
+// Is a known problem when webpack is written on TS
+// I used Mozilla convict to introduce env vars
 // ENV can be found at @see{https://gist.github.com/pataruco/6e6a39f336483b806ca5dc312b113986}
 import config from './config';
 const {
