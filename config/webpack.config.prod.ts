@@ -59,9 +59,14 @@ const config: webpack.Configuration = {
         windows: false,
       },
     }),
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^\.\/locale$/,
+      contextRegExp: /moment$/,
+    }),
   ],
   node: {
     net: 'empty',
+    fs: 'empty',
   },
   optimization: {
     minimizer: [
