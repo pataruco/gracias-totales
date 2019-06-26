@@ -1,12 +1,8 @@
-// const CLIENT_ID =
-//   '309718613253-re1s119gre0p5d0d2ir90ktfl347n0he.apps.googleusercontent.com';
-// const CLIENT_SECRET = 'OHlBfFNm-JVaQexokYlet3He';
-// const CALENDAR_ID = 'pataruco@gmail.com';
-// const EVENT_ID = '3je4tu7k6pkav5issgotebmeae';
-// const REFRESH_TOKEN = '1/EGlYKQqAAJ8g6Z3vJweTC3ofS0ANUq-s6o-v4SkBlXs';
-
+// I couldn't resolve .env using dotenv webpack
+// Is a know problem when webpack is written on TS
+// I used Mozilla convict to introduce evn vats
+// ENV can be found at @see{https://gist.github.com/pataruco/6e6a39f336483b806ca5dc312b113986}
 import config from './config';
-
 const {
   CALENDAR_ID,
   CLIENT_ID,
@@ -14,8 +10,6 @@ const {
   EVENT_ID,
   REFRESH_TOKEN,
 } = config.get('env');
-
-// console.log({ CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN });
 
 const refreshTokenUrl = `https://www.googleapis.com/oauth2/v4/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
 
