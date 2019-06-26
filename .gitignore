@@ -2,3 +2,4 @@ node_modules
 .env
 *.*.LICENSE
 .cache
+config.ts
