@@ -1,4 +1,3 @@
-// @ts-ignore
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -46,17 +45,12 @@ const config: webpack.Configuration = {
     new webpack.HotModuleReplacementPlugin(),
     new FaviconsWebpackPlugin(favicon),
   ],
-  // @ts-ignore
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: 3000,
     clientLogLevel: 'warning',
     historyApiFallback: true,
     stats: 'errors-only',
-  },
-  node: {
-    net: 'empty',
-    fs: 'empty',
   },
 };
 
