@@ -1,4 +1,3 @@
-// @ts-ignore
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -43,31 +42,12 @@ const config: webpack.Configuration = {
     }),
     new FaviconsWebpackPlugin({
       logo: favicon,
-      emitStats: true,
-      statsFilename: 'iconstats-[hash].json',
-      title: 'Gracias totales',
-      icons: {
-        android: false,
-        appleIcon: false,
-        appleStartup: false,
-        coast: false,
-        favicons: true,
-        firefox: false,
-        opengraph: true,
-        twitter: true,
-        yandex: false,
-        windows: false,
-      },
     }),
     new webpack.IgnorePlugin({
       resourceRegExp: /^\.\/locale$/,
       contextRegExp: /moment$/,
     }),
   ],
-  node: {
-    net: 'empty',
-    fs: 'empty',
-  },
   optimization: {
     minimizer: [
       new TerserJSPlugin({ extractComments: true }),
