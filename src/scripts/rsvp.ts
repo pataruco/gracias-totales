@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi';
+import Joi from 'joi';
 import { updateEvent } from './update-event';
 
 const form = document.getElementById('js-form') as HTMLFormElement;
@@ -7,9 +7,7 @@ const messageElement = document.getElementById(
   'js-rsvp-message',
 ) as HTMLParagraphElement;
 
-const schema = Joi.string()
-  .email()
-  .required();
+const schema = Joi.string().email().required();
 
 const messages = {
   request: `Updating guess list 📡...`,
@@ -18,12 +16,14 @@ const messages = {
   validation: `Please enter a valid email 📩`,
 };
 
+console.log('hola');
+
 const addAttendee = async (event: Event) => {
-  renderMessage(messages.request);
   event.preventDefault();
+  renderMessage(messages.request);
   if (emailInput.checkValidity()) {
     const { value } = emailInput;
-    const { error } = Joi.validate(value, schema);
+    const { error } = schema.validate(value);
     if (error) {
       renderMessage(messages.validation);
       document.body.classList.toggle('event-validation-error');
@@ -50,7 +50,7 @@ const focusState = (event: Event) => {
     'event-update-failure',
     'event-validation-error',
   ];
-  classesNames.forEach(name => document.body.classList.remove(name));
+  classesNames.forEach((name) => document.body.classList.remove(name));
   form.classList.add('focus');
 };
 
@@ -60,7 +60,7 @@ const blurState = (event: Event) => {
     'event-update-failure',
     'event-validation-error',
   ];
-  classesNames.forEach(name => document.body.classList.remove(name));
+  classesNames.forEach((name) => document.body.classList.remove(name));
 
   if (emailInput.value.length === 0) {
     form.classList.remove('focus');
