@@ -18,7 +18,7 @@ const startIcon: google.maps.Symbol = { ...customIcon, fillColor: red };
 const endIcon: google.maps.Symbol = { ...customIcon, fillColor: green };
 
 const renderMarker = (
-  position: google.maps.LatLng | google.maps.ReadonlyLatLngLiteral,
+  position: google.maps.LatLng,
   icon: google.maps.Symbol,
   map: google.maps.Map,
   label: string,
@@ -37,8 +37,8 @@ const renderMarker = (
   });
 
 const getUserCoordinates = async (): Promise<google.maps.LatLng> => {
-  return new Promise(resolve => {
-    navigator.geolocation.getCurrentPosition(position => {
+  return new Promise((resolve) => {
+    navigator.geolocation.getCurrentPosition((position) => {
       const { coords } = position;
       const { latitude, longitude } = coords;
       resolve(new google.maps.LatLng(latitude, longitude));
@@ -57,8 +57,8 @@ const renderRoute = (
 ): void => {
   const startLocation = getPositionFromLeg(leg.start_location);
   const endLocation = getPositionFromLeg(leg.end_location);
-  renderMarker(startLocation, startIcon, map, 'You');
-  renderMarker(endLocation, endIcon, map, 'Party 🎉');
+  renderMarker(leg.start_location, startIcon, map, 'You');
+  renderMarker(leg.end_location, endIcon, map, 'Party 🎉');
 };
 
 const renderDirections = (
@@ -79,6 +79,7 @@ const renderDirections = (
     {
       origin: from,
       destination: avalon,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       travelMode: 'DRIVING',
     },

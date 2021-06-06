@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
+
 export const favicon = path.resolve(
   __dirname,
   '../src/assets/party-popper.png',
@@ -44,6 +45,9 @@ const config: webpack.Configuration = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new FaviconsWebpackPlugin(favicon),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
@@ -52,6 +56,7 @@ const config: webpack.Configuration = {
     historyApiFallback: true,
     stats: 'errors-only',
   },
+  target: 'node',
 };
 
 export default config;
