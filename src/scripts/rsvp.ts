@@ -7,7 +7,9 @@ const messageElement = document.getElementById(
   'js-rsvp-message',
 ) as HTMLParagraphElement;
 
-const schema = Joi.string().email().required();
+const schema = Joi.string()
+  .email({ tlds: { allow: false } })
+  .required();
 
 const messages = {
   request: `Updating guess list 📡...`,

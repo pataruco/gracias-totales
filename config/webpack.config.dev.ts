@@ -56,7 +56,6 @@ const config: webpack.Configuration = {
     historyApiFallback: true,
     stats: 'errors-only',
   },
-  target: 'node',
 };
 
 export default config;

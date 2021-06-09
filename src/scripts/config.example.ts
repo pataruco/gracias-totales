@@ -1,13 +1,13 @@
-import convict from 'convict';
+const CLIENT_ID = '';
+const CLIENT_SECRET = '';
+const CALENDAR_ID = '';
+const EVENT_ID = '';
+const REFRESH_TOKEN = '';
 
-const config = convict({
-  env: {
-    CALENDAR_ID: '',
-    CLIENT_ID: '',
-    CLIENT_SECRET: '',
-    EVENT_ID: '',
-    REFRESH_TOKEN: '',
-  },
-});
-
-export default config;
+export default {
+  CALENDAR_ID,
+  CLIENT_ID,
+  CLIENT_SECRET,
+  EVENT_ID,
+  REFRESH_TOKEN,
+};
