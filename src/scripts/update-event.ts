@@ -2,9 +2,9 @@
 // Is a known problem when webpack is written on TS
 // I used Mozilla convict to introduce env vars
 // ENV can be found at @see{https://gist.github.com/pataruco/6e6a39f336483b806ca5dc312b113986}
-import config from './config';
-const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } =
-  config.get('env');
+
+import env from './config';
+const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } = env;
 
 const refreshTokenUrl = `https://www.googleapis.com/oauth2/v4/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
 
