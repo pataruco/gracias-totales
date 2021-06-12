@@ -1,6 +1,4 @@
 // I couldn't resolve .env using dotenv webpack
-// Is a known problem when webpack is written on TS
-// I used Mozilla convict to introduce env vars
 // ENV can be found at @see{https://gist.github.com/pataruco/6e6a39f336483b806ca5dc312b113986}
 
 import env from './config';
@@ -23,6 +21,7 @@ const getToken = async () => {
 
 const getEvent = async () => {
   const accessToken = await getToken();
+
   const response = await fetch(
     `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/${EVENT_ID}`,
     {
@@ -33,10 +32,7 @@ const getEvent = async () => {
       },
     },
   );
-  const data = response.json();
-
-  console.log({ data });
-  return data;
+  return response.json();
 };
 
 export const updateEvent = async (email: string): Promise<boolean> => {
