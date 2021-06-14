@@ -18,8 +18,6 @@ const messages = {
   validation: `Please enter a valid email 📩`,
 };
 
-console.log('hola');
-
 const addAttendee = async (event: Event) => {
   event.preventDefault();
   renderMessage(messages.request);
