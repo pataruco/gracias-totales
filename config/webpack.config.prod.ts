@@ -5,7 +5,17 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import path from 'path';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
-import { favicon } from './webpack.config.dev';
+import dotenv from 'dotenv';
+
+export const favicon = path.resolve(
+  __dirname,
+  '../src/assets/party-popper.png',
+);
+
+dotenv.config;
+
+const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } =
+  process.env;
 
 const config: webpack.Configuration = {
   entry: './src/index.ts',
@@ -40,12 +50,19 @@ const config: webpack.Configuration = {
       filename: '[name].css',
       chunkFilename: './[name].css',
     }),
-    new FaviconsWebpackPlugin({
-      logo: favicon,
-    }),
+    new FaviconsWebpackPlugin(favicon),
     new webpack.IgnorePlugin({
       resourceRegExp: /^\.\/locale$/,
       contextRegExp: /moment$/,
+    }),
+    new webpack.DefinePlugin({
+      envs: JSON.stringify({
+        CALENDAR_ID,
+        CLIENT_ID,
+        CLIENT_SECRET,
+        EVENT_ID,
+        REFRESH_TOKEN,
+      }),
     }),
   ],
   optimization: {
