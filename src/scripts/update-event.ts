@@ -1,8 +1,6 @@
-// I couldn't resolve .env using dotenv webpack
-// ENV can be found at @see{https://gist.github.com/pataruco/6e6a39f336483b806ca5dc312b113986}
-
-import env from './config';
-const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } = env;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } = envs;
 
 const refreshTokenUrl = `https://oauth2.googleapis.com/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
 

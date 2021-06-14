@@ -3,6 +3,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
+import dotenv from 'dotenv';
+
+dotenv.config;
+
+const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } =
+  process.env;
 
 export const favicon = path.resolve(
   __dirname,
@@ -45,8 +51,14 @@ const config: webpack.Configuration = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new FaviconsWebpackPlugin(favicon),
-    new webpack.ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'],
+    new webpack.DefinePlugin({
+      envs: JSON.stringify({
+        CALENDAR_ID,
+        CLIENT_ID,
+        CLIENT_SECRET,
+        EVENT_ID,
+        REFRESH_TOKEN,
+      }),
     }),
   ],
   devServer: {
