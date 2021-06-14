@@ -3,3 +3,4 @@ node_modules
 *.*.LICENSE
 .cache
 config.ts
+dist
