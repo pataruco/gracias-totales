@@ -25,7 +25,21 @@ const plugins: webpack.Configuration['plugins'] = [
     filename: '[name].css',
     chunkFilename: '[name].css',
   }),
-  new FaviconsWebpackPlugin(favicon),
+  new FaviconsWebpackPlugin({
+    logo: favicon,
+    mode: 'webapp',
+    devMode: 'webapp',
+    favicons: {
+      icons: {
+        android: false,
+        appleIcon: false,
+        favicons: false,
+        firefox: true,
+        windows: true,
+        yandex: false,
+      },
+    },
+  }),
   new webpack.DefinePlugin({
     envs: JSON.stringify({
       CALENDAR_ID,
