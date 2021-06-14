@@ -4,18 +4,11 @@
 import env from './config';
 const { CALENDAR_ID, CLIENT_ID, CLIENT_SECRET, EVENT_ID, REFRESH_TOKEN } = env;
 
-const refreshTokenUrl = `https://www.googleapis.com/oauth2/v4/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
+const refreshTokenUrl = `https://oauth2.googleapis.com/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token`;
 
 const getToken = async () => {
-  const response = await fetch(refreshTokenUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  });
-
-  const data = await response.json();
-  const { access_token } = data;
+  const response = await fetch(refreshTokenUrl, { method: 'POST' });
+  const { access_token } = await response.json();
   return access_token;
 };
 
