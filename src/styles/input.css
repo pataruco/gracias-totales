@@ -9,7 +9,7 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid green;
   -webkit-text-fill-color: var(--black);
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -58,7 +58,7 @@ select:-webkit-autofill:focus {
   transform: translate3d(0, 0, 0);
 }
 
-.form input[type='submit'] {
+.form button {
   -webkit-appearance: none;
   background-color: var(--white);
   border: 1px solid var(--black);
@@ -67,11 +67,12 @@ select:-webkit-autofill:focus {
   box-shadow: 3px 3px 0 var(--black);
   display: block;
   outline: none;
+  appearance: none;
 }
 
-.form input[type='submit']:hover,
-.form input[type='submit']:focus,
-.form input[type='submit']:active {
+.form button:hover,
+.form button:focus,
+.form button:active {
   border: 1px solid var(--black);
   box-shadow: 2px 2px 0 var(--black);
 }
