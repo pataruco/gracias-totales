@@ -1,9 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-import path from 'path';
-import TerserJSPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 
 import config from './webpack.config.base';
