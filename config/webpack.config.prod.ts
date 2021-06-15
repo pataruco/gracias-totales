@@ -1,4 +1,7 @@
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import path from 'path';
 import TerserJSPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
@@ -16,9 +19,13 @@ const prodConfig: webpack.Configuration = {
   ...config,
   mode: 'production',
   optimization: {
+    minimize: true,
     minimizer: [
-      new TerserJSPlugin({ extractComments: true }),
-      new OptimizeCSSAssetsPlugin({}),
+      `...`,
+      new CssMinimizerPlugin({
+        parallel: true,
+        minify: CssMinimizerPlugin.cleanCssMinify,
+      }),
     ],
   },
   output: {
