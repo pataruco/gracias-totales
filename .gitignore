@@ -4,3 +4,4 @@ node_modules
 .cache
 config.ts
 dist
+docs
