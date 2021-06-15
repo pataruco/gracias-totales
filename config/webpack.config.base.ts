@@ -1,4 +1,3 @@
-import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
@@ -20,25 +19,11 @@ const plugins: webpack.Configuration['plugins'] = [
     title: '¡Gracias totales!',
     filename: 'index.html',
     template: 'src/index.html',
+    favicon,
   }),
   new MiniCssExtractPlugin({
     filename: '[name].css',
     chunkFilename: '[name].css',
-  }),
-  new FaviconsWebpackPlugin({
-    logo: favicon,
-    mode: 'webapp',
-    devMode: 'webapp',
-    favicons: {
-      icons: {
-        android: false,
-        appleIcon: false,
-        favicons: false,
-        firefox: false,
-        windows: false,
-        yandex: false,
-      },
-    },
   }),
   new webpack.DefinePlugin({
     envs: JSON.stringify({
