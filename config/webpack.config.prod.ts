@@ -28,10 +28,6 @@ const prodConfig: webpack.Configuration = {
       }),
     ],
   },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../docs'),
-  },
   plugins,
 };
 
