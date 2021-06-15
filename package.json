@@ -38,8 +38,8 @@
   "scripts": {
     "build:local": "source .env; webpack  --config ./config/webpack.config.prod.ts",
     "build": "webpack  --config ./config/webpack.config.prod.ts",
-    "start": "source .env; webpack serve --color --config ./config/webpack.config.dev.ts",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "start": "source .env; webpack serve --color --config ./config/webpack.config.dev.ts"
   },
   "husky": {
     "hooks": {

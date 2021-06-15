@@ -27,7 +27,6 @@ jobs:
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: |
           yarn
-          printenv 
           yarn build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
